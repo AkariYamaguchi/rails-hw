@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Myapp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <div class="header">
+        <a href="/"><h1 class="header__logo">HELLO WORLD!</h1></a>
+        <ul class="header__list">
+            <a href="/posts/index"><li>投稿一覧</li></a>
+            <a href="/posts/new"><li>新規投稿</li></a>
+            <a href="#"><li>ログイン</li></a>
+        </ul>
+    </div>
+    <%= yield %>
+  </body>
+</html>
