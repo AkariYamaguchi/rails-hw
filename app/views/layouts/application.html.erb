@@ -15,8 +15,17 @@
         <ul class="header__list">
             <a href="/posts/index"><li>投稿一覧</li></a>
             <a href="/posts/new"><li>新規投稿</li></a>
-            <a href="#"><li>ログイン</li></a>
-            <a href="#"><li>ログアウト</li></a>
+
+            <% if user_signed_in? %>
+            <li>
+            <%= link_to('ログアウト', destroy_user_session_path, method: :delete) %>
+            </li>
+          <% else %>
+            <li>
+            <%= link_to('ログイン', new_user_session_path) %>
+            </li>
+          <% end %>
+
         </ul>
     </div>
     <%= yield %>
