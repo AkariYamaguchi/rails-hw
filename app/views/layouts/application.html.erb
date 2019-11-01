@@ -15,7 +15,11 @@
         <ul class="header__list">
             <a href="/posts/index"><li>投稿一覧</li></a>
             <a href="/posts/new"><li>新規投稿</li></a>
-
+            <% if user_signed_in? %>
+            <li>
+            <%= link_to('プロフィール',"/me") %>
+            </li>
+            <%end%>
             <% if user_signed_in? %>
             <li>
             <%= link_to('ログアウト', destroy_user_session_path, method: :delete) %>

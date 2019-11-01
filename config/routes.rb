@@ -1,5 +1,16 @@
 Rails.application.routes.draw do
   devise_for :users
+  resources :users
+  get "users/:id" => "users#show"
+  get "users/:id/edit" =>"users#edit"
+  post "users/:id/update" =>"users#edit"
+
+  resources :comments
+  get "comments/:id" => "comments#show"
+  get "comments/new" =>"comments#new"
+  get 'message/create' => "message#create"
+
+
   get "posts/index" => "posts#index"
   get "posts/new" => "posts#new"
   post "posts/create" => "posts#create"
@@ -9,4 +20,7 @@ Rails.application.routes.draw do
   get "posts/:id" => "posts#show"
   get "/" => "home#top"
 
+  get "me" => "me#index"
+  get "me/edit" => "me#edit"
+  post "me/update" => "me#update"
 end

@@ -15,7 +15,19 @@ class PostsController < ApplicationController
     @post =Post.new(content:params[:content])
     @post.save
     redirect_to("/posts/index")
+
+    @post = current_user.posts.build(post_params)
+    if @post.save
+      flash[:success] = "Post created!"
+      redirect_to root_url
+    end
   end
+
+private
+  def post_params
+    params.require(:post).permit(:content, :image)
+  end
+
 
   def edit
     @post= Post.find_by(id:params[:id])

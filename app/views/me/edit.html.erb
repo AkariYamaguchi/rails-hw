@@ -1,0 +1,7 @@
+<%= form_tag("/me/update", method: :post) do %>
+<p>名前</p>
+  <%= text_field_tag :name %><br>
+<p>アイコン</p>
+  <%= file_field_tag :image %><br>
+  <%= submit_tag %>
+<% end %>

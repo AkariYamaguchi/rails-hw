@@ -1,0 +1,7 @@
+<%= form_with model: @user, local: true  do |form| %>
+<p>名前</p>
+  <%= form.text_field :name %><br>
+<p>アイコン</p>
+  <%= form.file_field :image %><br>
+  <%= form.submit %>
+<% end %>
