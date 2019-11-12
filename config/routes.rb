@@ -20,7 +20,16 @@ Rails.application.routes.draw do
   get "posts/:id" => "posts#show"
   get "/" => "home#top"
 
-  get "me" => "me#index"
-  get "me/edit" => "me#edit"
-  post "me/update" => "me#update"
+  # get "me" => "me#index"
+  # get "me/edit" => "me#edit"
+  # post "me/update" => "me#update"
+
+  devise_for :mes, controllers: {
+  confirmations: 'mes/confirmations',
+  passwords:     'mes/passwords',
+  registrations: 'mes/registrations',
+  sessions:      'mes/sessions',
+
+}
+get "me/edit" => "mes/registrations#edit"
 end
