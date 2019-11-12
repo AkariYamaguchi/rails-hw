@@ -9,6 +9,7 @@ class PostsController < ApplicationController
   end
 
   def new
+
   end
 
   def create
@@ -16,17 +17,29 @@ class PostsController < ApplicationController
     @post.save
     redirect_to("/posts/index")
 
-    @post = current_user.posts.build(post_params)
-    if @post.save
-      flash[:success] = "Post created!"
-      redirect_to root_url
-    end
+    # redirect_to("/posts/index")
+
+    # @post = current_user.posts.build(post_params)
+    # if @post.save
+    #   flash[:success] = "Post created!"
+    #   redirect_to root_url
+
   end
 
-private
-  def post_params
-    params.require(:post).permit(:content, :image)
+  def destroy
+    @post =Post.find_by(id:params[:id])
+    @post.destroy
+    redirect_to("/posts/index")
   end
+
+  def edit
+    @post= Post.find_by(id:params[:id])
+  end
+
+
+  # def post_params
+  #   params.require(:post).permit(:content, :image)
+  # end
 
 
   def edit
@@ -40,9 +53,4 @@ private
     redirect_to("/posts/index")
   end
 
-  # def destroy
-  #   @post =Post.find_by(id:params[:id])
-  #   @post.destroy
-  #   redirect_to("/posts/index")
-  # end
 end
