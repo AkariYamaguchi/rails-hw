@@ -1,15 +1,18 @@
 class MeController < ApplicationController
     def index
+        @me = User.find_by(id:params[:id])
     end
-    def edit
 
+    def edit
+        @me=User.find_by(id:params[:id])
     end
+
     def update
-        # @user=Me.new(name:params[:name])
-        # @user.save
-        if current_user.save
-            redirect_to("/me")
-            flash[:notice]="ユーザー情報を編集しました"
-        end
+        @me= current_user
+        @me.name = params[:name]
+        @me.save
+        redirect_to("/me")
+        flash[:notice]="ユーザー情報を編集しました"
+
     end
 end

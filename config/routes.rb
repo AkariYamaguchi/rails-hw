@@ -5,12 +5,12 @@ Rails.application.routes.draw do
   get "users/:id/edit" =>"users#edit"
   post "users/:id/update" =>"users#edit"
 
-  resources :comments
-  get "comments/:id" => "comments#show"
-  get "comments/new" =>"comments#new"
-  get 'message/create' => "message#create"
+  # resources :comments
+  # get "comments/:id" => "comments#show"
+  # get "comments/new" =>"comments#new"
+  # get 'message/create' => "message#create"
 
-
+  #投稿
   get "posts/index" => "posts#index"
   get "posts/new" => "posts#new"
   post "posts/create" => "posts#create"
@@ -20,16 +20,17 @@ Rails.application.routes.draw do
   get "posts/:id" => "posts#show"
   get "/" => "home#top"
 
+  #プロフィール
   get "me" => "me#index"
   get "me/edit" => "me#edit"
   post "me/update" => "me#update"
 
-  devise_for :mes, controllers: {
-  confirmations: 'mes/confirmations',
-  passwords:     'mes/passwords',
-  registrations: 'mes/registrations',
-  sessions:      'mes/sessions',
+#   devise_for :mes, controllers: {
+#   confirmations: 'mes/confirmations',
+#   passwords:     'mes/passwords',
+#   registrations: 'mes/registrations',
+#   sessions:      'mes/sessions',
 
-}
-get "me/edit" => "mes/registrations#edit"
+# }
+# get "me/edit" => "mes/registrations#edit"
 end
