@@ -1,6 +1,6 @@
 class MeController < ApplicationController
     def index
-        @me = User.find_by(id:params[:id])
+        @me = current_user
     end
 
     def edit
