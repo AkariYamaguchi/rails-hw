@@ -2,11 +2,10 @@
 <p><%= current_user.id %></p>
 <p>名前</p>
 <%=@me.name%>
-
-
 <p>アイコン</p>
-
-<input type="image" value="">
+<% if @me.image.attached? %>
+    <%= image_tag @me.image%>
+<% end %>
 <p><%= current_user.email%></p>
 
 <%=link_to("プロフィール編集","/me/edit")%>

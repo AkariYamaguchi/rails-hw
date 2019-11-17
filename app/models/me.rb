@@ -1,5 +1,8 @@
 class Me < ApplicationRecord
-    # mount_uploader :image, ImageUploader
-   devise :database_authenticatable, :registerable,
+    # active storage
+    # has_one_attached :image
+    #carrirwave
+    mount_uploaders :image, ImageUploader
+    devise :database_authenticatable, :registerable,
            :recoverable, :rememberable, :validatable
 end

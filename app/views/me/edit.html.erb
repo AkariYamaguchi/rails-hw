@@ -1,7 +1,7 @@
-<%= form_tag("/me/update", method: :post) do %>
-<p>名前</p>
-  <%= text_field_tag :name%>
-<p>アイコン</p>
-  <%= file_field_tag :image %>
-  <%= submit_tag %>
+<%= form_for @user, url: me_update_path do %>
+  <p>名前</p>
+    <%= text_field_tag :name%>
+  <p>アイコン</p>
+    <%= file_field_tag :image %>
+    <%= submit_tag %>
 <% end %>

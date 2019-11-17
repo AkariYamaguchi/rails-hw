@@ -5,10 +5,10 @@ Rails.application.routes.draw do
   get "users/:id/edit" =>"users#edit"
   post "users/:id/update" =>"users#edit"
 
-  # resources :comments
-  # get "comments/:id" => "comments#show"
-  # get "comments/new" =>"comments#new"
-  # get 'message/create' => "message#create"
+  resources :comments
+  get "comments/:id" => "comments#show"
+  get "comments/new" =>"comments#new"
+  get 'message/create' => "message#create"
 
   #投稿
   get "posts/index" => "posts#index"
@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get "/" => "home#top"
 
   #プロフィール
+
   get "me" => "me#index"
   get "me/edit" => "me#edit"
   post "me/update" => "me#update"
