@@ -41,11 +41,6 @@ class PostsController < ApplicationController
   #   params.require(:post).permit(:content, :image)
   # end
 
-
-  def edit
-    @post= Post.find_by(id:params[:id])
-  end
-
   def update
     @post = Post.find_by(id:params[:id])
     @post.content = params[:content]

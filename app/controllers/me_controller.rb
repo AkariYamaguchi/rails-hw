@@ -8,8 +8,9 @@ class MeController < ApplicationController
     end
 
     def update
-        @me = current_user.update(me_params)
-        if @me.save
+        @user = current_user
+        @user.assign_attributes(me_params)
+        if @user.save(me_params)
             redirect_to("/me")
         else
             render("me/edit")

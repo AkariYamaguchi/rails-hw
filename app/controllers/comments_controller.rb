@@ -1,7 +1,11 @@
 class CommentsController < ApplicationController
+  def index
+    @comment =  Comment.all.order(created_at: :desc)
+    @user = current_user
+  end
     def new
     @comment = Comment.new
-  end
+    end
 
   def create
     @comment = Comment.create params.require(:comment).permit(:content, :image) # POINT
@@ -16,9 +20,18 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
   end
 
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    redirect_to("/comments")
+    flash[:notice]="削除に成功しました"
+
+  end
+
   def update
     @comment = Comment.find(params[:id])
-    @comment.update params.require(:comment).permit(:content, :image) # POINT
-    redirect_to @comment
+    @comment.content = params[:content]
+    @comment.save
+    redirect_to("/comments")
   end
 end

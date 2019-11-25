@@ -1,3 +1,8 @@
 <% if @comment.image.attached? %>
-  <%= image_tag @comment.image %>
+  <%= image_tag @comment.image, style: "width: 20rem;"%>
 <% end %>
+<%=@comment.content%>
+
+<%= link_to("投稿一覧へ戻る","/comments/")%>
+<%= link_to("削除","/comments/#{@comment.id}", {method:"delete"})%>
+<%= link_to("編集","/comments/#{@comment.id}/edit")%>

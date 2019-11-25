@@ -1,0 +1,25 @@
+.title {
+  text-align: center;
+  font-size: 25px;
+  padding: 40px;
+}
+
+.index {
+  text-align: center;
+  text-decoration: none;
+}
+
+.index .content {
+  padding: 15px;
+  margin: 10px 180px;
+  border-radius: 8px;
+  background-color: rgba(0, 153, 255, 0.2);
+}
+
+.index .content .link {
+  color: #0c3966;
+}
+
+.index .content .image {
+  padding: 10px;
+}

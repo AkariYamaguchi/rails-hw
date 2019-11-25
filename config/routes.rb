@@ -6,11 +6,14 @@ Rails.application.routes.draw do
   post "users/:id/update" =>"users#edit"
 
   resources :comments
+  get "comments" => "comments#index"
   get "comments/:id" => "comments#show"
   get "comments/new" =>"comments#new"
-  get 'message/create' => "message#create"
-
+  get "comments/:id" => "comments#edit"
+  delete "commnets/:id" => "comments#destroy"
+  post "comments/:id" => "comments#update"
   #投稿
+
   get "posts/index" => "posts#index"
   get "posts/new" => "posts#new"
   post "posts/create" => "posts#create"
@@ -24,7 +27,7 @@ Rails.application.routes.draw do
 
   get "me" => "me#index"
   get "me/edit" => "me#edit"
-  post "me/update" => "me#update"
+  patch "me/update" => "me#update"
 
 #   devise_for :mes, controllers: {
 #   confirmations: 'mes/confirmations',
