@@ -1,8 +1,14 @@
-<% if @comment.image.attached? %>
-  <%= image_tag @comment.image, style: "width: 20rem;"%>
-<% end %>
-<%=@comment.content%>
+<div class='show'>
+  <div class='show_image'>
+    <% if @comment.image.attached? %>
+      <%= image_tag @comment.image, style: "width: 20rem;"%>
+    <% end %>
+  </div>
+  <div class='show_content'>
+    <%=@comment.content%>
+  </div>
 
-<%= link_to("投稿一覧へ戻る","/comments/")%>
-<%= link_to("削除","/comments/#{@comment.id}", {method:"delete"})%>
-<%= link_to("編集","/comments/#{@comment.id}/edit")%>
+    <%= link_to("戻る","/comments/",class:"btn back") %>
+    <%= link_to("編集","/comments/#{@comment.id}/edit",class:"btn edit")%>
+    <%= link_to("削除","/comments/#{@comment.id}",method:"delete",class:'btn delete')%>
+</div>

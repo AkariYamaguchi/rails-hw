@@ -1,7 +1,9 @@
-<%= form_for @user, url: me_update_path do |f| %>
-  <p>名前</p>
-    <%= f.text_field :name%>
-  <p>アイコン</p>
-    <%= f.file_field :image %>
-    <%= f.submit %>
-<% end %>
+<div class='edit'>
+  <%= form_for @user, url: me_update_path do |f| %>
+    <p>名前</p>
+      <%= f.text_field :name%>
+    <p>アイコン</p>
+      <%= f.file_field :image %>
+      <%= f.submit %>
+  <% end %>
+</div>

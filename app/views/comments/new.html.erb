@@ -1,5 +1,12 @@
-<%= form_with model: @comment, local: true  do |form| %>
-  <%= form.text_area :content %><br>
-  <%= form.file_field :image %><br>
-  <%= form.submit %>
+<div class="new">
+  <h2 class="title">今の気持ちをつぶやこう！</h2>
+    <%= form_with model: @comment, local: true  do |form| %>
+
+    <%= form.text_area :content,class:"new_text" %><br>
+      <div class='addimage'>
+        <p class='addimage_sub'>画像をつける</p>
+          <%= form.file_field :image ,class:"new_image"%><br>
+      </div>
+    <%= form.submit 'つぶやく' ,class:'submit'%>
 <% end %>
+</div>

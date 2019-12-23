@@ -1,6 +1,8 @@
-// Place all the styles related to the comments controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// color
+$main: #4169e1;
+$sub: #e0b941;
+$font: #696969;
+
 .title {
   text-align: center;
   font-size: 25px;
@@ -23,5 +25,58 @@
     .image {
       padding: 10px;
     }
+  }
+}
+
+// new
+.new {
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  h2 {
+    color: #e0b941;
+  }
+  &_text {
+    width: 30%;
+    padding: 10px;
+    border: 1px solid #4169e1;
+    border-radius: 4px;
+    font-size: 18px;
+  }
+  .addimage {
+    padding: 40px;
+  }
+  .submit {
+    padding: 8px 35px;
+    margin-top: 50px;
+    background-color: #e0b941;
+    color: white;
+    border-radius: 4px;
+  }
+}
+
+// show
+.show {
+  color: $font;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+
+  &_image {
+    padding: 3%;
+  }
+  &_content {
+    padding-bottom: 5%;
+    font-size: 18px;
+  }
+  .btn {
+    margin-right: 8px;
+    display: inline-block;
+    border: solid 1px none;
+    border-radius: 4px;
+    background-color: rgba(224, 185, 65, 0.7);
+    color: white;
+    padding: 3px 10px;
+    font-size: 14px;
   }
 }

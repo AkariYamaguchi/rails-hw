@@ -1,0 +1,43 @@
+// color
+$main: #4f78ff;
+$sub: #e0b941;
+$font: #696969;
+
+// index
+.me {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  h2 {
+    color: $sub;
+  }
+  &_image {
+    width: 20rem;
+  }
+  .table {
+    color: $font;
+    margin: 0 auto;
+
+    th,
+    td {
+      height: 50px;
+      width: 200px;
+    }
+  }
+  .btn {
+    padding-top: 4%;
+
+    .edit {
+      margin-right: 8px;
+      display: inline-block;
+      border: solid 1px none;
+      border-radius: 4px;
+      background-color: rgba(224, 185, 65, 0.7);
+      color: white;
+      padding: 3px 10px;
+      font-size: 14px;
+    }
+  }
+}
+
+// edit
