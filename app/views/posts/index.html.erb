@@ -1,6 +1,0 @@
-<h1>ツイート一覧</h1>
-
-
-<% @posts.each do |post| %>
-    <%= link_to(post.content,"/posts/#{post.id}") %>
-<% end %>

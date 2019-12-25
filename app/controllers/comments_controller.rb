@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   def index
-    @comment =  Comment.all.order(created_at: :desc)
-    @user = current_user
+    @commnet = Comment.all.order(created_at: :desc)
+
   end
     def new
     @comment = Comment.new

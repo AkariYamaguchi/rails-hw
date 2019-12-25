@@ -1,6 +1,6 @@
 class MeController < ApplicationController
     def index
-        @me = current_user
+        @user = current_user
     end
 
     def edit

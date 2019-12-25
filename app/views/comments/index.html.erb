@@ -5,8 +5,8 @@
     <div class="content">
         <%= link_to(comment.content,"/comments/#{comment.id}",class: "link")%>
         <div class="image">
-        <% if @user.image.attached? %>
-            <%= image_tag @user.image, style: "width: 20rem;"%>
+        <% if @comment.image.attached? %>
+        <%= image_tag @comment.image, style: "width: 20rem;"%>
         <% end %>
         </div>
     </div>
