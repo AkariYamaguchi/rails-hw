@@ -37,7 +37,7 @@
 .new_text {
   width: 30%;
   padding: 10px;
-  border: 1px solid #4169e1;
+  border: 2px solid #4169e1;
   border-radius: 4px;
   font-size: 18px;
 }
@@ -77,6 +77,37 @@
   border-radius: 4px;
   background-color: rgba(224, 185, 65, 0.7);
   color: white;
+  padding: 3px 10px;
+  font-size: 14px;
+}
+
+.comment-edit {
+  color: #696969;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.comment-edit h1 {
+  padding: 3% 0%;
+}
+
+.comment-edit_content {
+  width: 30%;
+  padding-bottom: 4%;
+  border: 2px solid #4169e1;
+  border-radius: 4px;
+  font-size: 18px;
+}
+
+.comment-edit_btn {
+  margin-right: 8px;
+  display: inline-block;
+  border: solid 1px none;
+  border-radius: 4px;
+  background-color: rgba(224, 185, 65, 0.7);
+  color: white;
+  margin-top: 3%;
   padding: 3px 10px;
   font-size: 14px;
 }
