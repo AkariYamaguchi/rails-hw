@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get "comments" => "comments#index"
   get "comments/:id" => "comments#show"
   get "comments/new" =>"comments#new"
-  get "comments/:id" => "comments#edit"
+  get "comments/:id/edit" => "comments#edit"
   delete "commnets/:id" => "comments#destroy"
   post "comments/:id" => "comments#update"
 

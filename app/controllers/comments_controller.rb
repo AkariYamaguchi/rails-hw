@@ -10,7 +10,13 @@ class CommentsController < ApplicationController
 
     def create
       @comment = Comment.create params.require(:comment).permit(:content, :image) # POINT
-      redirect_to @comment
+      if @comment.save
+        flash[:notice]= "投稿しました"
+        redirect_to("/comments")
+      else
+        flash[:notice]= "投稿に失敗しました"
+        redirect_to("/comments/new")
+      end
     end
 
     def show
@@ -33,7 +39,11 @@ class CommentsController < ApplicationController
     def update
       @comment = Comment.find(params[:id])
       @comment.content = params[:content]
-      @comment.save
-      redirect_to("/comments")
+      if @comment.save
+        flash[:notice]= "投稿を編集しました"
+          redirect_to("/comments")
+        else
+          render("comments/edit")
+      end
     end
 end
