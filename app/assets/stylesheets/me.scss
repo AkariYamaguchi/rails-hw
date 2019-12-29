@@ -25,9 +25,11 @@ $font: #696969;
       width: 200px;
     }
   }
-  &_btnwrap {
-    padding: 2%;
-    &_btn {
+
+  .btn {
+    padding-top: 4%;
+    .edit {
+
       margin-right: 8px;
       display: inline-block;
       border: solid 1px none;
