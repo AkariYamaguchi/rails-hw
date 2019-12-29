@@ -4,8 +4,9 @@
   text-align: center;
 }
 
-.me h2 {
+.me h1 {
   color: #e0b941;
+  padding: 3% 0%;
 }
 
 .me_image {
@@ -23,17 +24,52 @@
   width: 200px;
 }
 
-.me .btn {
-  padding-top: 4%;
+.me_btnwrap {
+  padding: 2%;
 }
 
-.me .btn .edit {
+.me_btnwrap_btn {
   margin-right: 8px;
   display: inline-block;
   border: solid 1px none;
   border-radius: 4px;
   background-color: rgba(224, 185, 65, 0.7);
   color: white;
+  padding: 3px 10px;
+  font-size: 14px;
+}
+
+.me-edit {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  color: #696969;
+}
+
+.me-edit h1 {
+  padding: 3% 0%;
+}
+
+.me-edit_inner {
+  border: solid 2px rgba(224, 185, 65, 0.7);
+  border-radius: 6px;
+  width: 30%;
+  margin: 0 auto;
+  padding: 2%;
+}
+
+.me-edit_inner .me-edit_name {
+  padding-bottom: 4%;
+}
+
+.me-edit_btn {
+  margin-right: 8px;
+  display: inline-block;
+  border: solid 1px none;
+  border-radius: 4px;
+  background-color: rgba(224, 185, 65, 0.7);
+  color: white;
+  margin-top: 3%;
   padding: 3px 10px;
   font-size: 14px;
 }

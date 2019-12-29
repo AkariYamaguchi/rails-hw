@@ -1,5 +1,5 @@
 <div class='me'>
-<h2>プロフィール</h2>
+<h1>プロフィール</h1>
  <% if @user.image.attached? %>
             <%= image_tag @user.image, class:'me_image'%>
         <% end %>
@@ -18,7 +18,7 @@
         <td><%= current_user.email%></td>
     </tr>
 </table>
-<div class='btn'>
-    <%=link_to("プロフィール編集","/me/edit",class:'edit')%>
+<div class='me_btnwrap'>
+    <%=link_to("プロフィール編集","/me/edit",class:'me_btnwrap_btn')%>
 </div>
 </div>

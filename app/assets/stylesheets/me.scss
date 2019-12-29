@@ -8,8 +8,9 @@ $font: #696969;
   width: 100%;
   margin: 0 auto;
   text-align: center;
-  h2 {
+  h1 {
     color: $sub;
+    padding: 3% 0%;
   }
   &_image {
     width: 20rem;
@@ -24,9 +25,11 @@ $font: #696969;
       width: 200px;
     }
   }
+
   .btn {
     padding-top: 4%;
     .edit {
+
       margin-right: 8px;
       display: inline-block;
       border: solid 1px none;
@@ -40,3 +43,33 @@ $font: #696969;
 }
 
 // edit
+.me-edit {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  color: $font;
+  h1 {
+    padding: 3% 0%;
+  }
+  &_inner {
+    border: solid 2px rgba(224, 185, 65, 0.7);
+    border-radius: 6px;
+    width: 30%;
+    margin: 0 auto;
+    padding: 2%;
+    .me-edit_name {
+      padding-bottom: 4%;
+    }
+  }
+  &_btn {
+    margin-right: 8px;
+    display: inline-block;
+    border: solid 1px none;
+    border-radius: 4px;
+    background-color: rgba(224, 185, 65, 0.7);
+    color: white;
+    margin-top: 3%;
+    padding: 3px 10px;
+    font-size: 14px;
+  }
+}

@@ -1,9 +1,20 @@
-<div class='edit'>
-  <%= form_for @user, url: me_update_path do |f| %>
-    <p>名前</p>
-      <%= f.text_field :name%>
-    <p>アイコン</p>
-      <%= f.file_field :image %>
-      <%= f.submit %>
-  <% end %>
+
+<div class='me-edit'>
+  <h1>編集</h1>
+
+  <div class='me-edit_inner'>
+    <%= form_for @user, url: me_update_path do |f| %>
+    <div class='me-edit_name'>
+      <p>名前</p>
+        <%= f.text_field :name%>
+    </div>
+    <div class='me-edit_name'>
+      <p>アイコン</p>
+        <%= f.file_field :image %>
+    </div>
+
+  </div>
+    <%= f.submit '編集完了！' ,class:'me-edit_btn'%>
+    <% end %>
+
 </div>

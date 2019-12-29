@@ -1,6 +1,10 @@
-<h1>編集</h1>
+<div class='comment-edit'>
+    <h1>編集</h1>
 
-<%= form_tag("/comments/#{@comment.id}",method:"post") do%>
-<textarea name="content"><%= @comment.content%></textarea>
-<input type="submit" value="保存">
-<% end %>
+    <%= form_tag("/comments/#{@comment.id}",method:"post") do%>
+    <textarea name="content" class='comment-edit_content'><%= @comment.content%></textarea>
+    <div>
+        <input type="submit" value="編集完了！" class='comment-edit_btn'>
+        <% end %>
+    </div>
+</div>
