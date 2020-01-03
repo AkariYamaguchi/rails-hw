@@ -10,33 +10,25 @@
   </head>
 
   <body>
-  <div class="header">
-        <a href="/"><h1 class="header__logo">HELLO WORLD!</h1></a>
-        <ul class="header__list">
-
-
-            <% if user_signed_in? %>
-              <a href="/comments/new"><li>新規投稿</li></a>
-            <% else %>
-              <li>
-              <%= link_to('新規投稿', new_user_session_path) %>
-              </li>
-            <%end%>
-
-            <% if user_signed_in? %>
-            <a href="/comments/"><li>投稿一覧</li></a>
-            <a href="/me"><li>プロフィール</li></a>
-            <a><li>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo">TWEETO WORLD!</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="sass.html">TWEETO WORLD!について</a></li>
+        <li><a href="/comments/new">つぶやく</a></li>
+        <% if user_signed_in? %>
+        <li><a href="/me">プロフィール</a></li>
+            <li><a>
             <%= link_to('ログアウト', destroy_user_session_path, method: :delete) %>
-            </li></a>
+            </a></li>
           <% else %>
             <li>
             <%= link_to('ログイン', new_user_session_path) %>
             </li>
           <% end %>
-
-        </ul>
+      </ul>
     </div>
+  </nav>
 
     <% if flash[:notice]%>
       <div class="flash">
