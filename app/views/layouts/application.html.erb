@@ -7,6 +7,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Pen+Script|Permanent+Marker|Reenie+Beanie&display=swap" rel="stylesheet">
   </head>
 
   <body>
@@ -36,5 +37,30 @@
       </div>
     <% end %>
     <%= yield %>
+
+    <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">TWEETO WORLD!</h5>
+
+              </div>
+              <div class="col l4 offset-l2 s12">
+
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">TWEETO WORLD!について</a></li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2020 Copyright akari yamaguchi
+
+            </div>
+          </div>
+        </footer>
+
   </body>
 </html>

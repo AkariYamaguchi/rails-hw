@@ -1,8 +1,51 @@
 @import "materialize";
+
+// 関数
+@mixin fz_vw($font_size: 10) {
+  font-size: $font_size * 1px;
+  font-size: get_vw($font_size);
+}
+
+// color
+// pink
+$color1: #ee6e72;
+
+// blue
+$color2: #84b7de;
+
+// green
+$color3: #c8e6c1;
+
+//orange
+$color4: #f8c98d;
+
 li {
   list-style: none;
 }
 
 a {
-  color: #e0b941;
+  color: white;
+}
+* {
+  margin: 0px;
+}
+
+.top {
+  background-image: url("/topbg.jpg");
+  background-size: cover;
+
+  &_inner {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20%;
+    & h1 {
+      color: $color2;
+
+      letter-spacing: 5px;
+      margin: 0px;
+      font-family: "Permanent Marker", cursive;
+      @include fz_vw(50);
+    }
+  }
 }
