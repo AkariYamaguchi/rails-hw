@@ -10,6 +10,7 @@
   </head>
 
   <body>
+
   <div class="header">
         <a href="/"><h1 class="header__logo">HELLO WORLD!</h1></a>
         <ul class="header__list">
@@ -27,6 +28,18 @@
             <a href="/comments/"><li>投稿一覧</li></a>
             <a href="/me"><li>プロフィール</li></a>
             <a><li>
+
+  <header>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo">TWEETO WORLD!</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="sass.html">TWEETO WORLD!について</a></li>
+        <li><a href="/comments/new">つぶやく</a></li>
+        <% if user_signed_in? %>
+        <li><a href="/me">プロフィール</a></li>
+            <li><a>
+
             <%= link_to('ログアウト', destroy_user_session_path, method: :delete) %>
             </li></a>
           <% else %>
@@ -38,11 +51,37 @@
         </ul>
     </div>
 
-    <% if flash[:notice]%>
-      <div class="flash">
-        <%= flash[:notice]%>
-      </div>
-    <% end %>
+  </nav>
+</header>
+
+    <main>
     <%= yield %>
+
+    </main>
+    <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">TWEETO WORLD!</h5>
+
+              </div>
+              <div class="col l4 offset-l2 s12">
+
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">TWEETO WORLD!について</a></li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2020 Copyright akari yamaguchi
+
+            </div>
+          </div>
+        </footer>
+
+
   </body>
 </html>
