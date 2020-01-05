@@ -30,7 +30,6 @@ a {
   margin: 0px;
 }
 
-
 body {
   display: flex;
   min-height: 100vh;
@@ -41,23 +40,27 @@ main {
   flex: 1 0 auto;
 }
 
-
 .top {
-  background-image: url("/topbg.jpg");
+  // background: linear-gradient(
+  //     to top,
+  //     rgba(217, 175, 217, 0.8) 0%,
+  //     rgba(151, 217, 225, 0.8) 100%
+  //   ),
+  //   url("/topbg-5.jpeg");
+  background-image: url(/topbg02.jpg);
   background-size: cover;
-
   &_inner {
     width: 100%;
     margin: 0 auto;
     text-align: center;
     padding: 20%;
     & h1 {
-      color: $color2;
-
-      letter-spacing: 5px;
+      color: white;
+      text-stroke: 1px #696969;
+      -webkit-text-stroke: 1px #696969;
       margin: 0px;
-      font-family: "Permanent Marker", cursive;
-      @include fz_vw(50);
+      font-family: "Halfomania", "Permanent Marker", cursive;
+      font-size: 13vw;
     }
   }
 }
