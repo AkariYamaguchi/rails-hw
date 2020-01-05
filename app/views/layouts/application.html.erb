@@ -7,9 +7,11 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Pen+Script|Permanent+Marker|Reenie+Beanie&display=swap" rel="stylesheet">
   </head>
 
   <body>
+
 
   <div class="header">
         <a href="/"><h1 class="header__logo">HELLO WORLD!</h1></a>
@@ -30,6 +32,7 @@
             <a><li>
 
   <header>
+
   <nav>
     <div class="nav-wrapper">
       <a href="/" class="brand-logo">TWEETO WORLD!</a>
@@ -41,15 +44,15 @@
             <li><a>
 
             <%= link_to('ログアウト', destroy_user_session_path, method: :delete) %>
-            </li></a>
+            </a></li>
           <% else %>
             <li>
             <%= link_to('ログイン', new_user_session_path) %>
             </li>
           <% end %>
-
-        </ul>
+      </ul>
     </div>
+  </nav>
 
   </nav>
 </header>
@@ -58,6 +61,7 @@
     <%= yield %>
 
     </main>
+
     <footer class="page-footer">
           <div class="container">
             <div class="row">
