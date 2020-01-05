@@ -11,6 +11,28 @@
   </head>
 
   <body>
+
+
+  <div class="header">
+        <a href="/"><h1 class="header__logo">HELLO WORLD!</h1></a>
+        <ul class="header__list">
+
+
+            <% if user_signed_in? %>
+              <a href="/comments/new"><li>新規投稿</li></a>
+            <% else %>
+              <li>
+              <%= link_to('新規投稿', new_user_session_path) %>
+              </li>
+            <%end%>
+
+            <% if user_signed_in? %>
+            <a href="/comments/"><li>投稿一覧</li></a>
+            <a href="/me"><li>プロフィール</li></a>
+            <a><li>
+
+  <header>
+
   <nav>
     <div class="nav-wrapper">
       <a href="/" class="brand-logo">TWEETO WORLD!</a>
@@ -20,6 +42,7 @@
         <% if user_signed_in? %>
         <li><a href="/me">プロフィール</a></li>
             <li><a>
+
             <%= link_to('ログアウト', destroy_user_session_path, method: :delete) %>
             </a></li>
           <% else %>
@@ -31,12 +54,13 @@
     </div>
   </nav>
 
-    <% if flash[:notice]%>
-      <div class="flash">
-        <%= flash[:notice]%>
-      </div>
-    <% end %>
+  </nav>
+</header>
+
+    <main>
     <%= yield %>
+
+    </main>
 
     <footer class="page-footer">
           <div class="container">
@@ -61,6 +85,7 @@
             </div>
           </div>
         </footer>
+
 
   </body>
 </html>
