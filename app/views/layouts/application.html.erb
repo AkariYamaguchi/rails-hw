@@ -11,28 +11,7 @@
   </head>
 
   <body>
-
-
-  <div class="header">
-        <a href="/"><h1 class="header__logo">HELLO WORLD!</h1></a>
-        <ul class="header__list">
-
-
-            <% if user_signed_in? %>
-              <a href="/comments/new"><li>新規投稿</li></a>
-            <% else %>
-              <li>
-              <%= link_to('新規投稿', new_user_session_path) %>
-              </li>
-            <%end%>
-
-            <% if user_signed_in? %>
-            <a href="/comments/"><li>投稿一覧</li></a>
-            <a href="/me"><li>プロフィール</li></a>
-            <a><li>
-
   <header>
-
   <nav>
     <div class="nav-wrapper">
       <a href="/" class="brand-logo">TWEETO WORLD!</a>
@@ -85,7 +64,5 @@
             </div>
           </div>
         </footer>
-
-
   </body>
 </html>
