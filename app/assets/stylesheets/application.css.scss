@@ -30,7 +30,6 @@ a {
   margin: 0px;
 }
 
-
 body {
   display: flex;
   min-height: 100vh;
@@ -40,7 +39,6 @@ body {
 main {
   flex: 1 0 auto;
 }
-
 
 .top {
   background-image: url("/topbg.jpg");
@@ -60,4 +58,8 @@ main {
       @include fz_vw(50);
     }
   }
+}
+
+.container {
+  text-align: center;
 }
