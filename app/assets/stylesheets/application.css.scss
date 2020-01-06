@@ -63,3 +63,12 @@ main {
 .container {
   text-align: center;
 }
+.wrap {
+  background-image: url(/new01.jpg);
+  background-size: cover;
+  padding: 10vw;
+  &_fil {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5% 0%;
+  }
+}
