@@ -1,20 +1,43 @@
-</div>
-<div class='me-edit'>
-  <h1>編集</h1>
-
-  <div class='me-edit_inner'>
-    <%= form_for @user, url: me_update_path do |f| %>
-    <div class='me-edit_name'>
-      <p>名前</p>
-        <%= f.text_field :name%>
-    </div>
-    <div class='me-edit_name'>
-      <p>アイコン</p>
-        <%= f.file_field :image %>
-    </div>
-
-  </div>
-    <%= f.submit '編集完了！' ,class:'me-edit_btn'%>
-    <% end %>
-
-</div>
+<body>
+      <div class="container">
+        <!--title-->
+        <div class='row center'>
+          <div class='col offset-s3 s6 '>
+            <h2>編集</h2>
+          </div>
+        </div>
+        <!--card-->
+        <div class="row">
+            <div class="col s12 l6 offset-l3">
+              <div class="card">
+                <%= form_for @user, url: me_update_path do |f| %>
+                <div class="card-image">
+                  <%= image_tag @user.image%>
+                  <span class="card-title">現在のアイコン</span>
+                </div>
+                <div class="card-content">
+                  <table class='table' >
+                    <tr style='border-bottom:none',class='row'>
+                        <th class='col s3'>名前</th>
+                        <td class='col s9'><%= f.text_field :name%></td>
+                    </tr>
+                    <tr style='border-bottom:none',class='row'>
+                        <th class='col s3'>アイコン</th>
+                        <td class='col s9'><%= f.file_field :image %></td>
+                    </tr>
+                  </table>
+                </div>
+           <!--card bottun-->
+                <div class='row center'>
+                    <div class='col s12'>
+                        <%= f.submit '編集完了！' ,class:'me-edit btn'%>
+                      <% end %>
+                    </div>
+                <div class='row'></div>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+</body>

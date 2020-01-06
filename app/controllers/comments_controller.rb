@@ -26,6 +26,7 @@ class CommentsController < ApplicationController
 
     def edit
       @comment = Comment.find(params[:id])
+      @user = current_user
     end
 
     def destroy
