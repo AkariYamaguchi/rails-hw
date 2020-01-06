@@ -60,9 +60,6 @@ main {
   }
 }
 
-.container {
-  text-align: center;
-}
 .wrap {
   background-image: url(/new03.jpg);
   background-size: cover;
@@ -70,5 +67,13 @@ main {
   &_fil {
     background-color: rgba(255, 255, 255, 0.8);
     padding: 5% 0%;
+    .container {
+      text-align: center;
+
+      .new_text {
+        border-radius: 4px;
+        border-color: #ce93d8;
+      }
+    }
   }
 }
