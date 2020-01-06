@@ -1,5 +1,7 @@
 <div class='show'>
   <div class='show_image'>
+    <%= link_to(@user.name,"/me/#{@user.id}")%>
+
     <% if @comment.image.attached? %>
       <%= image_tag @comment.image, style: "width: 20rem;"%>
     <% end %>

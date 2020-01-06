@@ -22,13 +22,6 @@ $color3: #c8e6c1;
 //orange
 $color4: #f8c98d;
 
-li {
-  list-style: none;
-}
-
-a {
-  color: white;
-}
 * {
   margin: 0px;
 }
@@ -104,4 +97,18 @@ main {
       }
     }
   }
+}
+
+//commnet/index
+.link {
+  color: white;
+}
+
+// me/index
+.me_image {
+  width: 80px;
+  height: 80px;
+  border-radius: 40%;
+  margin: 20px 0 10px;
+  object-fit: cover;
 }
