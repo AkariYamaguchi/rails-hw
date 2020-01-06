@@ -1,24 +1,31 @@
-<div class='me'>
-<h1>プロフィール</h1>
- <% if @user.image.attached? %>
-            <%= image_tag @user.image, class:'me_image'%>
-        <% end %>
+<body>
+    <div class='container'>
+        <div class='row'>
+            <div class='col s6 me'>
+                <h1>プロフィール</h1>
+            </div>
+                <% if @user.image.attached? %>
+                            <%= image_tag @user.image, class:'me_image'%>
+                        <% end %>
 
-<table class='table'>
-    <tr>
-        <th>ユーザー ID</th>
-        <td><%= current_user.id %></td>
-    </tr>
-    <tr>
-        <th>名前</th>
-        <td><%=@user.name%></td>
-    </tr>
-    <tr>
-        <th>メールアドレス</th>
-        <td><%= current_user.email%></td>
-    </tr>
-</table>
-<div class='me_btnwrap'>
-    <%=link_to("プロフィール編集","/me/edit",class:'me_btnwrap_btn')%>
-</div>
-</div>
+                <table class='table'>
+                    <tr>
+                        <th>ユーザー ID</th>
+                        <td><%= current_user.id %></td>
+                    </tr>
+                    <tr>
+                        <th>名前</th>
+                        <td><%=@user.name%></td>
+                    </tr>
+                    <tr>
+                        <th>メールアドレス</th>
+                        <td><%= current_user.email%></td>
+                    </tr>
+                </table>
+                <div class='me_btnwrap'>
+                    <%=link_to("プロフィール編集","/me/edit",class:'me_btnwrap_btn')%>
+                </div>
+            </div>
+
+    </div>
+</body>
