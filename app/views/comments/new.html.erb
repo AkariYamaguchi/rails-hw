@@ -1,12 +1,27 @@
-<div class="new">
-  <h2 class="title">今の気持ちをつぶやこう！</h2>
-    <%= form_with model: @comment, local: true  do |form| %>
+<!-- materialize grid-->
+<body>
+      <div class="container">
+        <!-- Page Content goes here -->
+        <div class='row'>
+          <div class='col s12'>
+            <h2 class="title">今の気持ちをつぶやこう！</h2>
+          </div>
+        </div>
 
-    <%= form.text_area :content,class:"new_text" %><br>
-      <div class='addimage'>
-        <p class='addimage_sub'>画像をつける</p>
-          <%= form.file_field :image ,class:"new_image"%><br>
+        <div class='row'>
+          <div class='col s3'></div>
+          <div class='col s6'>
+            <%= form_with model: @comment, local: true  do |form| %>
+              <%= form.text_area :content,class:"new_text" %><br>
+          </div>
+          <div class='col s3'></div>
+        </div>
+        <div class='row'>
+              <%= form.file_field :image ,class:"new_image"%><br>
+        </div class='row'>
+              <%= form.submit 'つぶやく' ,class:'btn submit'%>
+            <% end %>
+        </div>
+
       </div>
-    <%= form.submit 'つぶやく' ,class:'submit'%>
-<% end %>
-</div>
+</body>
