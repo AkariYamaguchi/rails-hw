@@ -1,10 +1,32 @@
-<div class='comment-edit'>
-    <h1>編集</h1>
+<body>
+    <div class="container center">
+        <div class='row'>
+            <div class='col s12'>
+                <h2>編集</h2>
+            </div>
+        </div>
+                <!---card-->
+                <div class="card blue lighten-3">
+                    <div class="card-content white-text">
+                        <div class='row left'>
+                            <div class='col s3 '>
+                                <%= image_tag @user.image, class: "me_image" %>
+                            </div>
+                        </div>
 
-    <%= form_tag("/comments/#{@comment.id}",method:"post") do%>
-    <textarea name="content" class='comment-edit_content'><%= @comment.content%></textarea>
-    <div>
-        <input type="submit" value="編集完了！" class='comment-edit_btn'>
+                        <div class='row'>
+                            <div class='col s6 push-s2'>
+                                <%= form_tag("/comments/#{@comment.id}",method:"post") do%>
+                                <textarea name="content" class='comment-edit_content white'><%= @comment.content%></textarea>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!--bottun-->
+                <input type="submit" value="編集完了！" class='comment-edit btn'>
+                <div class='row'></div>
         <% end %>
     </div>
-</div>
+</body>
