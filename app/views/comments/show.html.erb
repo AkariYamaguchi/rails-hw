@@ -1,16 +1,44 @@
-<div class='show'>
-  <div class='show_image'>
-    <%= link_to(@user.name,"/me/#{@user.id}")%>
+<body>
+  <div class='row'></div>
+      <div class="container">
+        <!-- Page Content goes here -->
+        <div class="card blue lighten-3">
+                    <div class="card-content white-text">
+                        <div class='row left'>
+                            <div class='col s12 m12'>
+                                <%= image_tag @user.image, class: "me_image" %>
+                            </div>
+                        </div>
 
-    <% if @comment.image.attached? %>
-      <%= image_tag @comment.image, style: "width: 20rem;"%>
-    <% end %>
-  </div>
-  <div class='show_content'>
-    <%=@comment.content%>
-  </div>
+                        <div class='row center'>
+                            <div class='col s12 m12 '>
+                                <%=@comment.content%>
+                            </div>
+                        </div>
+                        <div class='row'>
+                            <div class='col s12'>
+                                <% if @comment.image.attached? %>
+                                    <%= image_tag @comment.image, style: "width: 20rem;"%>
+                                <% end %>
+                            </div>
+                        </div>
 
-    <%= link_to("戻る","/comments/",class:"btn back") %>
-    <%= link_to("編集","/comments/#{@comment.id}/edit",class:"btn edit")%>
-    <%= link_to("削除","/comments/#{@comment.id}",method:"delete",class:'btn delete')%>
-</div>
+                        <div class='row right'>
+                            <div class='col s12'>
+                                    <%= @comment.created_at.strftime("%Y年%m月%d日%H時%M分")%>
+                            </div>
+                        </div>
+                    </div>
+          </div>
+
+        <!--button-->
+        <div class='row center'>
+              <div class='col s12'>
+                  <%= link_to("戻る","/comments/",class:"btn back") %>
+                  <%= link_to("編集","/comments/#{@comment.id}/edit",class:"btn edit")%>
+                  <%= link_to("削除","/comments/#{@comment.id}",method:"delete",class:'btn delete')%>
+              </div>
+        </div>
+
+      </div>
+</body>
