@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
     def index
       @comment = Comment.all.order(created_at: :desc)
-
+      @user = current_user
     end
 
     def new
@@ -21,11 +21,12 @@ class CommentsController < ApplicationController
 
     def show
       @comment = Comment.find(params[:id])
-
+      @user = current_user
     end
 
     def edit
       @comment = Comment.find(params[:id])
+      @user = current_user
     end
 
     def destroy
