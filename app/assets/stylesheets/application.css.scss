@@ -47,12 +47,6 @@ main {
 }
 
 .top {
-  // background: linear-gradient(
-  //     to top,
-  //     rgba(217, 175, 217, 0.8) 0%,
-  //     rgba(151, 217, 225, 0.8) 100%
-  //   ),
-  //   url("/topbg-5.jpeg");
   background-image: url(/topbg02.jpg);
   background-size: cover;
   &_inner {
