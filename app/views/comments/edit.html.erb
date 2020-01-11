@@ -8,12 +8,13 @@
                 <!---card-->
                 <div class="card blue lighten-3">
                     <div class="card-content white-text">
+                        <% if user_signed_in? %>
                         <div class='row left'>
                             <div class='col s3 '>
                                 <%= image_tag @user.image, class: "me_image" %>
                             </div>
                         </div>
-
+                        <% end %>
                         <div class='row'>
                             <div class='col s6 push-s2'>
                                 <%= form_tag("/comments/#{@comment.id}",method:"post") do%>
@@ -26,7 +27,7 @@
 
                 <!--bottun-->
                 <input type="submit" value="編集完了！" class='comment-edit btn'>
-                <div class='row'></div>
+
         <% end %>
     </div>
 </body>

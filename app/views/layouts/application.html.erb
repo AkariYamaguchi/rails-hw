@@ -16,14 +16,11 @@
     <div class="nav-wrapper">
       <a href="/" class="brand-logo">TWEETO WORLD!</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-
         <li><a href="/comments/new">つぶやく</a></li>
-        <li><a href="/comments/">みんなのなう</a></li>
         <% if user_signed_in? %>
+        <li><a href="/comments/">みんなのなう</a></li>
         <li><a href="/me">プロフィール</a></li>
-            <li><a>
-
-            <%= link_to('ログアウト', destroy_user_session_path, method: :delete) %>
+          <li><%= link_to('ログアウト', destroy_user_session_path, method: :delete) %></li>
             </a></li>
           <% else %>
             <li>

@@ -16,5 +16,3 @@
 //= require_tree .
 //= require materialize
 //= require materialize-sprockets
-import "materialize-css/dist/js/materialize";
-require("materialize");

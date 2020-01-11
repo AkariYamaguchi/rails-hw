@@ -1,15 +1,16 @@
 <body>
-  <div class='row'></div>
+<div class='row'></div>
       <div class="container">
         <!-- Page Content goes here -->
         <div class="card blue lighten-3">
                     <div class="card-content white-text">
+                    <% if user_signed_in? %>
                         <div class='row left'>
                             <div class='col s12 m12'>
                                 <%= image_tag @user.image, class: "me_image" %>
                             </div>
                         </div>
-
+                    <% end %>
                         <div class='row center'>
                             <div class='col s12 m12 '>
                                 <%=@comment.content%>
