@@ -11,10 +11,16 @@
             <div class="col s12 l6 offset-l3">
               <div class="card">
                 <%= form_for @user, url: me_update_path do |f| %>
+
                 <div class="card-image">
+                <% if @user.image.attached? %>
                   <%= image_tag @user.image%>
+                  <% else %>
+                  <%= image_tag '/defalt_img.png'%>
+                  <%end%>
                   <span class="card-title">現在のアイコン</span>
                 </div>
+
                 <div class="card-content">
                   <table class='table' >
                     <tr style='border-bottom:none',class='row'>

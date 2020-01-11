@@ -5,6 +5,7 @@ class MeController < ApplicationController
 
     def edit
         @user = current_user
+
     end
 
     def update

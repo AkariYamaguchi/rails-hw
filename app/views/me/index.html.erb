@@ -9,12 +9,18 @@
         <!--card-->
         <div class="row center">
             <div class="col s12 l6 offset-l3">
+
               <div class="card">
                 <div class="card-image">
+                <% if @user.image.attached? %>
                   <%= image_tag @user.image%>
+                  <% else %>
+                  <%= image_tag '/defalt_img.png'%>
+                  <% end %>
                   <span class="card-title">アイコン</span>
                 </div>
-                <div class="card-content">
+              <div class="card-content">
+
                 <table class='table'>
                     <tr>
                         <th>名前</th>
