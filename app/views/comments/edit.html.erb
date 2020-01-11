@@ -11,7 +11,11 @@
                         <% if user_signed_in? %>
                         <div class='row left'>
                             <div class='col s3 '>
+                            <% if @user.image.attached? %>
                                 <%= image_tag @user.image, class: "me_image" %>
+                            <% else %>
+                                <%= image_tag '/defalt_img.png',class: 'defalt_img'%>
+                            <%end%>
                             </div>
                         </div>
                         <% end %>
@@ -25,8 +29,11 @@
                     </div>
                 </div>
 
+                <button class="btn waves-effect waves-light" type="submit" name="action">編集完了！
+                    <i class="material-icons right">send</i>
+                </button>
                 <!--bottun-->
-                <input type="submit" value="編集完了！" class='comment-edit btn'>
+
 
         <% end %>
     </div>
