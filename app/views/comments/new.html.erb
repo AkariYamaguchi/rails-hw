@@ -21,9 +21,13 @@
         <div class='row'>
               <%= form.file_field :image ,class:"new_image"%><br>
         </div>
-        <button class="btn waves-effect waves-light" type="submit" name="action">つぶやく
-          <i class="material-icons right">send</i>
-        </button>
+        <% if user_signed_in? %>
+          <button class="btn waves-effect waves-light" type="submit" name="action">つぶやく
+            <i class="material-icons right">send</i>
+          </button>
+        <% else %>
+        <%= link_to("つぶやく", new_user_session_path, class:"btn") %>
+        <% end %>
       <% end %>
       </div>
     </div>
