@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
     def index
       @comment = Comment.all.order(created_at: :desc)
-      @user = current_user
+      @user = User.find_by(params[:id])
     end
 
     def new
@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
     end
 
     def create
-      @comment = Comment.create params.require(:comment).permit(:content, :image) # POINT
+      @comment = Comment.create params.require(:comment).permit(:content, :image,).merge(user_id: current_user.id)
       if @comment.save
         flash[:notice]= "投稿しました"
         redirect_to("/comments")
@@ -21,7 +21,7 @@ class CommentsController < ApplicationController
 
     def show
       @comment = Comment.find(params[:id])
-      @user = current_user
+      @user = User.find_by(id: @comment.user_id)
     end
 
     def edit

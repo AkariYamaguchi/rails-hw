@@ -16,11 +16,12 @@
                     <% if user_signed_in? %>
                         <div class='row left'>
                             <div class='col s12 m12'>
+                            <!--プロフ画像-->
                             <% if @user.image.attached? %>
                                 <%= link_to image_tag(@user.image, class: "me_image"), "/comments/#{comment.id}" %>
-                                <% else %>
+                            <% else %>
                                 <%= image_tag '/defalt_img.png',class: 'defalt_img'%>
-                                <%end%>
+                            <%end%>
                             </div>
                         </div>
                     <% end %>
