@@ -12,6 +12,7 @@
                             <% else %>
                                 <%= image_tag '/defalt_img.png',class: 'defalt_img'%>
                             <%end%>
+                            <%= @user.name%>
                             </div>
                         </div>
                     <% end %>
@@ -40,8 +41,12 @@
         <div class='row center'>
               <div class='col s12'>
                   <%= link_to("戻る","/comments/",class:"btn back") %>
-                  <%= link_to("編集","/comments/#{@comment.id}/edit",class:"btn edit")%>
-                  <%= link_to("削除","/comments/#{@comment.id}",method:"delete",class:'btn delete')%>
+                  <% if user_signed_in? %>
+                    <% if @user.id == current_user.id %>
+                        <%= link_to("編集","/comments/#{@comment.id}/edit",class:"btn edit")%>
+                        <%= link_to("削除","/comments/#{@comment.id}",method:"delete",class:'btn delete')%>
+                    <% end %>
+                  <% end %>
               </div>
         </div>
 

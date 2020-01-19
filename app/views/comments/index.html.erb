@@ -16,18 +16,24 @@
                     <% if user_signed_in? %>
                         <div class='row left'>
                             <div class='col s12 m12'>
-                            <% if @user.image.attached? %>
-                                <%= link_to image_tag(@user.image, class: "me_image"), "/comments/#{comment.id}" %>
-                                <% else %>
+                            <!--プロフ画像-->
+                            <% if comment.user.image.attached? %>
+                                <%= link_to image_tag(comment.user.image, class: "me_image"), "/comments/#{comment.id}" %>
+                            <% else %>
                                 <%= image_tag '/defalt_img.png',class: 'defalt_img'%>
-                                <%end%>
+                            <%end%>
+                            <%= comment.user.name%>
                             </div>
                         </div>
                     <% end %>
 
                         <div class='row'>
                             <div class='col s12 m12 '>
-                                <%= link_to(comment.content,"/comments/#{comment.id}",class: "link")%>
+                                <% if user_signed_in? %>
+                                    <%= link_to(comment.content,"/comments/#{comment.id}",class: "link")%>
+                                <% else %>
+                                <%= link_to(comment.content,new_user_session_path, class: "link")%>
+                                <% end %>
                             </div>
                         </div>
                         <div class='row'>
